@@ -1,0 +1,14 @@
+{
+  "name": "mini-miner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sha256": "^0.2.0"
+  }
+}
