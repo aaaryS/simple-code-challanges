@@ -1,0 +1,11 @@
+{
+  "name": "unpack-bytes-javascript",
+  "version": "1.0.0",
+  "description": "Help me unpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

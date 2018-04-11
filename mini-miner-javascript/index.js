@@ -1,6 +1,5 @@
 const MiniMiner = require('./src/mini-miner')
 
-
 const testCase = {
 difficulty: 13,
 block: {

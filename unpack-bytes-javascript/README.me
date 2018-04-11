@@ -1,0 +1,41 @@
+Help me unpack
+
+The challenge is to receive bytes and extract some numbers from those bytes.
+
+Connect to the problem endpoint, grab a base64-encoded pack of bytes, unpack the required values from it and send them back.
+
+The pack contains, always in the following order:
+
+a regular int (signed), to start off
+an unsigned int
+a short (signed) to make things interesting
+a float because floating point is important
+a double as well
+another double but this time in big endian (network byte order)
+In case you're wondering, we're using 4 byte ints, so everything is in the context of a 32-bit platform.
+
+Extract those number from the byte string and send them back to the solution endpoint for your reward. The see solution section for a description of the JSON we'll be expecting.
+
+Getting the problem set
+GET /challenges/help_me_unpack/problem?access_token=8852c35131720e33
+
+Problem JSON format will be in the following format:
+
+bytes: base64 encoded bytes that you have to unpack
+Submitting a solution
+POST /challenges/help_me_unpack/solve?access_token=8852c35131720e33
+
+Solution JSON structure:
+
+int: the signed integer value
+uint: the unsigned integer value
+short: the decoded short value
+float: surprisingly, the float value
+double: the double value - shockigly
+big_endian_double: you get the idea by now!
+To make things easier, the response will usually include info about which value you got wrong and what was the expected value.
+
+Why this challenge?
+This challenge is actually inspired in part by the Redis one challenge, where reading things from raw bytes is sort of necessary. I also figured h^ really needed a simple, first-timer friendly challenge with a simple premise, and here it is!
+
+By the way, I was always slightly fascinated by how floating point things are stored. The IEEE754 format is actually really, really neat - it's just that people in general suck at explaning it (jumping straight to math, which is lazy). If you want to read more into it, I can wholeheartedly recommend floating point visually explained. It's a great piece.
